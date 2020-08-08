@@ -2,6 +2,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const helmet = require("helmet");
+const compression = require("comprression");
 
 /* Add variables from .env file to environment */
 const dotenv = require("dotenv").config();
@@ -16,6 +18,8 @@ const PORT = process.env.PORT || 5000;
 
 /* Register middleware */
 const app = express(); // init express
+app.use(helmet);
+app.use(compression);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -32,6 +36,13 @@ app.use(
 app.use("/api/articles", require("./api/articles"));
 app.use("/api/covid-data", require("./api/covid-data"));
 app.use("/api/news", require("./api/news"));
+
+if (ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/build')))
+    app.use((req, res) => {
+        res.sendFile(path.join(__dirname, '../client/build/index.html'))
+    })
+}
 
 /* Setup listening on PORT for request handling*/
 app.listen(PORT, () => {
