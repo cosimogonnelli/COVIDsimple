@@ -4,7 +4,8 @@ CREATE TABLE public.articles (
     name character varying,
     date character varying,
     rating_count integer,
-    rating_sum integer
+    rating_sum integer,
+    PRIMARY KEY (url)
 );
 
 
