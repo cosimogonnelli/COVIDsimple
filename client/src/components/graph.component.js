@@ -208,7 +208,7 @@ const Graph = (props) => {
  * Values of state properties are dictated by the recorded statistic for that state, on that date
  */
 function convertDataset(data, statistic) {
-
+    
     let dateKeyedMap = {};
     data.forEach(entry => {
         /* Group entries by date */
@@ -223,7 +223,6 @@ function convertDataset(data, statistic) {
         return a.date < b.date ? -1 : (a.date === b.date ? 0 : 1);
     });
     return sortedData;
-
 }
 
 /** 
@@ -329,6 +328,7 @@ function convertDatasetTwo(data, statistic) {
     }
     return compressed                                              // Final compressed dataset ready to be graph
 }
+convertDatasetTwo();
 
 // Helper function to merge data
 // eslint-disable-next-line
