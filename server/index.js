@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const helmet = require("helmet");
-const compression = require("comprression");
+const compression = require("compression");
 
 /* Add variables from .env file to environment */
 const dotenv = require("dotenv").config();
@@ -38,8 +38,8 @@ app.use("/api/covid-data", require("./api/covid-data"));
 app.use("/api/news", require("./api/news"));
 
 if (ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/build')))
-    app.use((req, res) => {
+    app.use(express.static(path.join(__dirname, '../client/build'))) /* serve static build files */
+    app.use((req, res) => { /* fallback to index.html */
         res.sendFile(path.join(__dirname, '../client/build/index.html'))
     })
 }
