@@ -27,12 +27,12 @@ app.use(bodyParser.json());
 // enable CORS on deployment url
 //  may need to change to a function allowing multiple origins on deployment:
 //  Ref: https://medium.com/@alexishevia/using-cors-in-express-cac7e29b005b
-// app.use(
-//     cors({
-//         origin: "https://covidsimple.herokuapp.com/",
-//     })
-// );
-app.use(cors());
+app.use(
+    cors({
+        origin: "https://covidsimple.herokuapp.com/",
+    })
+);
+//app.use(cors()); // allow cors globallly
 
 /* Register API endpoints */
 app.use("/api/articles", require("./api/articles"));
