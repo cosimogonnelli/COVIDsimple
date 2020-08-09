@@ -18,8 +18,7 @@ export default class About extends Component {
                         <h5 className="card-subtitle">A more intuitivi data representation</h5>
                         <p className="card-text mt-3">This project started with the idea of creating a site that would be able to represent
                         COVID-19 data in an accessible and visual way. This was meant to give the user an intuitive feeling of the complexity
-                        of the pandemic and the seriousness of the problem. Due to the short time available for the project, we had to
-                        scale-down the complexity of our graphical representation. </p>
+                        of the pandemic and the seriousness of the problem. </p>
                     </div>
                 </div>
                 <div className='card-deck'>
@@ -32,7 +31,13 @@ export default class About extends Component {
                             </div>
                             <h3 className="card-title mt-2">Connor Robetorye</h3>
                             <h5 className="card-subtitle">Graduate Student</h5>
-                            <p className="card-text mt-3">I'm a grad student at PSU and have spent most of my time focusing on machine learning.</p>
+                            <p className="card-text mt-3">
+                                I'm currently midway through my AI and ML focused degree,
+                                though as a former philosophy major I like my CS as theoretical and impractical as it can be, 
+                                meaning Theory of Computation, Discrete Math, and Algorithms have been my favorite
+                                classes. When I'm not busy with school, I like making computer-generated art, biking from food cart
+                                to food cart, and playing chess online.
+                            </p>
                             <a href="https://github.com/inordirection"
                                 className="btn btn-dark btn-sm float-right"
                                 title="Go to Connor gitHub page">GitHub
