@@ -21,18 +21,14 @@ const PORT = process.env.PORT || 5000;
 /* Register middleware */
 const app = express(); // init express
 app.use(helmet());
-// Set "Content-Security-Policy" header 
-app.use(
-    helmet.contentSecurityPolicy({
-      directives: {
-        "default-src": ["'Self'"],
-        "script-src": ["'Self'", "'unsafe-inline'"],
-        "font-src": ["'Self'", "fonts.gstatic.com"],
-        "style-src": ["'Self'", "'unsafe-inline'", "fonts.googleapis.com"],
-        "img-src": ["'none'"]
-      },
-    })
-  );
+// Sets "Content-Security-Policy Header"
+app.use(expressCspHeader({
+    policies: {
+        'default-src': [NONE],
+        'img-src': [NONE],
+        'script-src': [NONE]
+    },
+}));
 app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
