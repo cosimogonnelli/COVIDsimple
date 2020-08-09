@@ -4,9 +4,6 @@ import { Container, Row, Col, Button } from 'reactstrap';
 import FeedTable from './feed-articles.component';
 import RatedTable from './rated-articles.component';
 
-import '../App.css';
-
-
 export default class NewsList extends Component {
     /*constructor(props) { super(props); } */
     constructor(props){

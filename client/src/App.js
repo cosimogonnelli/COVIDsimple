@@ -1,8 +1,7 @@
 import React from 'react';
-import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
-// How to import relevant component from the module for reactstrap
-// import { Container, Row, Col} from 'reactstrap';
+
+import "./App.css"
 
 import NavMenu from "./components/navbar.component";
 import NationalView from "./components/national-view.component";

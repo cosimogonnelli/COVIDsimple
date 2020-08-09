@@ -8,7 +8,6 @@ import "react-datepicker/dist/react-datepicker.css"; // styling for Datepicker
 import moment from 'moment'
 
 import Graph from './graph.component.js'
-import '../App.css';
 
 /* Save inital state for reset and enforcing date selection boundaries */
 const initialState = {
