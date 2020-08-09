@@ -26,7 +26,8 @@ app.use(
       directives: {
         "default-src": ["'Self'"],
         "script-src": ["'Self'", "'unsafe-inline'"],
-        "font-src": ["'Self'", "'googleapis.com'"]
+        "font-src": ["'Self'", "'fonts.googleapis.com'"],
+        "style-src": ["'Self'", "'unsafe-inline'"],
       },
     })
   );
