@@ -24,6 +24,16 @@ const PORT = process.env.PORT || 5000;
 /* Register middleware */
 const app = express(); // init express
 app.use(helmet());
+// Sets "Content-Security-Policy: default-src 'self';script-src 'self' example.com;object-src 'none'"
+// app.use(
+//     helmet.contentSecurityPolicy({
+//       directives: {
+//         "default-src": ["'self'"],
+//         "script-src": ["'self'", "example.com"],
+//         "object-src": ["'none'"],
+//       },
+//     })
+//   );
 app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -48,7 +58,7 @@ app.use(
 // }));
 app.use(expressCspHeader({
     policies: {
-        'default-src': [NONE],
+        'default-src': [SELF],
         'img-src': [SELF],
     },
     directives: {
