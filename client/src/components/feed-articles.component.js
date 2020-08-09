@@ -96,7 +96,6 @@ const FeedTable = ({ articles}) => {
             </tbody>
             </Table>
             <PaginationTool aria-label='latest-news-pagintation' pageCount={pageCount} 
-            currentPage={currentPage} 
             handlePageClick={(e, index) => {
                 e.preventDefault();
                 setPage(index);
@@ -113,6 +112,7 @@ const FeedTable = ({ articles}) => {
                         setEndIndex(endIndex + 1);
                     }
                 }
+
             }} 
             handlePrevClick={() => {
                 if(currentPage > 0){
@@ -127,19 +127,22 @@ const FeedTable = ({ articles}) => {
             }}
             handleGoToStartClick={() => {
                 setPage(0);
+                setStartIndex(0);
                 if(pageCount > 5){
-                    setStartIndex(0);
                     setEndIndex(5);
+                }
+                else{
+                    setEndIndex(pageCount);
                 }
             }}
             handleGoToEndClick={() => {
-                setPage(pageCount-1);
+                setPage(pageCount - 1);
                 if(pageCount > 5){
                     setStartIndex(pageCount - 5);
-                    setEndIndex(pageCount-1);
+                    setEndIndex(pageCount);
                 }
             }}
-            startIndex={startIndex} endIndex={endIndex}
+            startIndex={startIndex} endIndex={endIndex} currentPage={currentPage} 
             />
             </div>
                 
