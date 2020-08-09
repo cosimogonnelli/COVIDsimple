@@ -26,9 +26,9 @@ app.use(
       directives: {
         "default-src": ["'Self'"],
         "script-src": ["'Self'", "'unsafe-inline'"],
-        "font-src": ["'Self'"],
+        "font-src": ["'Self'", "fonts.gstatic.com"],
         "style-src": ["'Self'", "fonts.googleapis.com"],
-        "img-src": ["'Self'", "githubusercontent.com"]
+        "img-src": ["'Self'", "*.githubusercontent.com"]
       },
     })
   );
