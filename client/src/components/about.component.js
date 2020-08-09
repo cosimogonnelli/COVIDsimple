@@ -16,7 +16,7 @@ export default class About extends Component {
                             <img className="covid-image" src={covid19} alt="covid-19 virus close-up" />
                         </div>
                         <h3 className="card-title mt-2">COVIDsimple</h3>
-                        <h5 className="card-subtitle">A more intuitivi data representation</h5>
+                        <h5 className="card-subtitle">A more intuitive data representation</h5>
                         <p className="card-text mt-3">This project started with the idea of creating a site that would be able to represent
                         COVID-19 data in an accessible and visual way. This was meant to give the user an intuitive feeling of the complexity
                         of the pandemic and the seriousness of the problem. </p>
