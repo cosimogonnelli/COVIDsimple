@@ -5,7 +5,7 @@ const cors = require("cors");
 const path = require('path');
 const helmet = require("helmet");
 const compression = require("compression");
-const { expressCspHeader, NONCE, NONE, SELF } = require('express-csp-header');
+const { expressCspHeader, NONCE, NONE, SELF, DATA, INLINE } = require('express-csp-header');
 
 /* Add variables from .env file to environment */
 const dotenv = require("dotenv").config();
