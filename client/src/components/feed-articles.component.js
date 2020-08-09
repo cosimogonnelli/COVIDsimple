@@ -7,8 +7,6 @@ import RatingDropDownButton from './rating.component';
 import Preview from './article-preview.component';
 import SortNewsButton from './sort-news.component';
 
-import '../App.css';
-
 
 const FeedTable = ({ articles}) => {
     const [currentPage, setPage] = useState(0);

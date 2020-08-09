@@ -12,7 +12,6 @@ import WhatIsCovid from "./components/what-is-covid19.component";
 import noMatch from "./components/404page.component";
 
 
-
 function App() {
   return (
     <Router>
