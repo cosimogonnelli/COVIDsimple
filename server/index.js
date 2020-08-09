@@ -58,12 +58,10 @@ app.use(
 // }));
 app.use(expressCspHeader({
     policies: {
-        'default-src': [SELF],
-        'img-src': [SELF],
+        'default-src': [NONE],
+        'img-src': [NONE],
+        'script-src': [NONE]
     },
-    directives: {
-        'script-src': [NONCE]
-    }
 }));
 
 app.use('/favicon.ico', (req, res) => {
