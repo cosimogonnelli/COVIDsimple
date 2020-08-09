@@ -5,6 +5,7 @@ const cors = require("cors");
 const path = require('path');
 const helmet = require("helmet");
 const compression = require("compression");
+const { expressCspHeader, NONCE, NONE, SELF } = require('express-csp-header');
 
 /* Add variables from .env file to environment */
 const dotenv = require("dotenv").config();
@@ -36,14 +37,15 @@ app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-// enable CORS on deployment url
+// enable CORS on specified URL
 //  may need to change to a function allowing multiple origins on deployment:
 //  Ref: https://medium.com/@alexishevia/using-cors-in-express-cac7e29b005b
 app.use(
     cors({
-        origin: "http://localhost:3000",
+        origin: "http://localhost:3000/",
     })
 );
+//app.use(cors()); // allow cors globallly
 
 
 /* Register API endpoints */
