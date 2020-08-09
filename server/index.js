@@ -5,6 +5,10 @@ const cors = require("cors");
 const path = require('path');
 const helmet = require("helmet");
 const compression = require("compression");
+const csp = require('express-csp-header');
+
+// HTTP response header will be defined as:
+// "Content-Security-Policy: default-src 'none'; img-src 'self';"
 
 /* Add variables from .env file to environment */
 const dotenv = require("dotenv").config();
@@ -33,6 +37,15 @@ app.use(
     })
 );
 //app.use(cors()); // allow cors globallly
+
+// HTTP response header will be defined as:
+// "Content-Security-Policy: default-src 'none'; img-src 'self';"
+app.use(csp({
+    policies: {
+        'default-src': [csp.NONE],
+        'img-src': [csp.SELF],
+    }
+}));
 
 app.use('/favicon.ico', (req, res) => {
     res.sendStatus(204);
