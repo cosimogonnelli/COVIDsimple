@@ -24,7 +24,7 @@ app.use(compression);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-// enable CORS on all requests from origin localhost:3000
+// enable CORS on deployment url
 // may need to change to a function allowing multiple origins on deployment:
 //  Ref: https://medium.com/@alexishevia/using-cors-in-express-cac7e29b005b
 app.use(
