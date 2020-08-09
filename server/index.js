@@ -26,8 +26,9 @@ app.use(
       directives: {
         "default-src": ["'Self'"],
         "script-src": ["'Self'", "'unsafe-inline'"],
-        "font-src": ["'Self'", "'fonts.googleapis.com'"],
+        "font-src": ["'Self'", "'https://fonts.googleapis.com'"],
         "style-src": ["'Self'", "'unsafe-inline'"],
+        "img-src": ["'Self'", "'https://avatars1.githubusercontent.com'"]
       },
     })
   );
