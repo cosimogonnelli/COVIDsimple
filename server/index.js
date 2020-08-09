@@ -27,7 +27,7 @@ app.use(
         "default-src": ["'Self'"],
         "script-src": ["'Self'", "'unsafe-inline'"],
         "font-src": ["'Self'", "fonts.gstatic.com"],
-        "style-src": ["'Self'", "fonts.googleapis.com"],
+        "style-src": ["'Self'", "'unsafe-inline'", "fonts.googleapis.com"],
         "img-src": ["'Self'", "*.githubusercontent.com"]
       },
     })
