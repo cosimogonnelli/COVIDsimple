@@ -6,7 +6,6 @@ import RatingDropDownButton from './rating.component';
 import PaginationTool from './table-pagination.component';
 import SortRatedButton from './sort-rated.component';
 
-
 const RatedTable = ({ articles }) => {
     const [currentPage, setPage] = useState(0);
     const pageSize=10;
@@ -151,16 +150,19 @@ const RatedTable = ({ articles }) => {
             }}
             handleGoToStartClick={() => {
                 setPage(0);
+                setStartIndex(0);
                 if(pageCount > 5){
-                    setStartIndex(0);
                     setEndIndex(5);
+                }
+                else{
+                    setEndIndex(pageCount);
                 }
             }}
             handleGoToEndClick={() => {
-                setPage(pageCount-1);
+                setPage(pageCount - 1);
                 if(pageCount > 5){
                     setStartIndex(pageCount - 5);
-                    setEndIndex(pageCount - 1);
+                    setEndIndex(pageCount);
                 }
             }}
             startIndex={startIndex} endIndex={endIndex}
