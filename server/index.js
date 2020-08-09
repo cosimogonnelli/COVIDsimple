@@ -5,7 +5,7 @@ const cors = require("cors");
 const path = require('path');
 const helmet = require("helmet");
 const compression = require("compression");
-const csp = require('express-csp-header');
+const { expressCspHeader, NONCE, NONE, SELF } = require('express-csp-header');
 
 // HTTP response header will be defined as:
 // "Content-Security-Policy: default-src 'none'; img-src 'self';"
@@ -40,10 +40,19 @@ app.use(
 
 // HTTP response header will be defined as:
 // "Content-Security-Policy: default-src 'none'; img-src 'self';"
-app.use(csp({
+// app.use(csp({
+//     policies: {
+//         'default-src': [csp.NONE],
+//         'img-src': [csp.SELF],
+//     }
+// }));
+app.use(expressCspHeader({
     policies: {
-        'default-src': [csp.NONE],
-        'img-src': [csp.SELF],
+        'default-src': [NONE],
+        'img-src': [SELF],
+    },
+    directives: {
+        'script-src': [NONCE]
     }
 }));
 
