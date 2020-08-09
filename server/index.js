@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 //  Ref: https://medium.com/@alexishevia/using-cors-in-express-cac7e29b005b
 app.use(
     cors({
-        origin: "http://localhost:3000",
+        origin: "https://covidsimple.herokuapp.com/",
     })
 );
 
