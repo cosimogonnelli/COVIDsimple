@@ -1,5 +1,5 @@
 import React, { Component, /*isValidElement*/ } from 'react';
-/* import { Link } from 'react-router-dom'; */
+import { Container } from 'reactstrap';
 
 import covid from '../images/covid.png';
 
@@ -7,7 +7,7 @@ import covid from '../images/covid.png';
 export default class WhatIsCovid extends Component {
     render() {
         return (
-            <div className="container">
+           <Container>
                 <div className="what-Is-project">
                     <div className="card-body">
                         <div className="inner">
@@ -112,7 +112,7 @@ export default class WhatIsCovid extends Component {
                         </div>
                     </div>
                 </div>
-            </div >
+            </Container>
         )
     }
 }
