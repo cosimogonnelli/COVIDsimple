@@ -20,12 +20,13 @@ const PORT = process.env.PORT || 5000;
 /* Register middleware */
 const app = express(); // init express
 app.use(helmet());
-// Sets "Content-Security-Policy" header 
+// Set "Content-Security-Policy" header 
 app.use(
     helmet.contentSecurityPolicy({
       directives: {
         "default-src": ["'Self'"],
-        "script-src": ["'Self'"],
+        "script-src": ["'Self'", "'unsafe-inline'"],
+        "font-src": ["'Self'", "'googleapis.com'"]
       },
     })
   );
