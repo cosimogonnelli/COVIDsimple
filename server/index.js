@@ -34,6 +34,10 @@ app.use(
 );
 //app.use(cors()); // allow cors globallly
 
+app.use('/favicon.ico', (req, res) => {
+    res.sendStatus(204);
+}
+
 /* Register API endpoints */
 app.use("/api/articles", require("./api/articles"));
 app.use("/api/covid-data", require("./api/covid-data"));
