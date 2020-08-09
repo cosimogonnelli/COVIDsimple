@@ -24,11 +24,9 @@ app.use(helmet());
 app.use(
     helmet.contentSecurityPolicy({
       directives: {
-        "default-src": ["'Self'"],
-        "script-src": ["'Self'", "'unsafe-inline'"],
-        "font-src": ["'Self'", "fonts.gstatic.com"],
-        "style-src": ["'Self'", "'unsafe-inline'", "fonts.googleapis.com"],
-        "img-src": ["'Self'", "*.githubusercontent.com"]
+        "default-src": ["'none'"],
+        "script-src": ["'none'"],
+        "img-src": ["'none'"]
       },
     })
   );
@@ -44,7 +42,6 @@ app.use(
         origin: "http://localhost:3000",
     })
 );
-
 
 /* Register API endpoints */
 app.use("/api/articles", require("./api/articles"));
