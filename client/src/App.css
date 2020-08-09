@@ -207,7 +207,7 @@ since the might have different property  */
 
 .container {
     position: relative;
-    width: 50%;
+    /*width: 50%;*/
 }
 
 .overlay {
