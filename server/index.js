@@ -64,9 +64,9 @@ app.use(expressCspHeader({
     },
 }));
 
-app.use('/favicon.ico', (req, res) => {
-    res.sendStatus(204);
-})
+// app.use('/favicon.ico', (req, res) => {
+//     res.sendStatus(204);
+// })
 
 /* Register API endpoints */
 app.use("/api/articles", require("./api/articles"));
