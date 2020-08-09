@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 /* import { Link } from 'react-router-dom'; */
 
-import '../App.css';
 import covid19 from '../images/covid19.png';
 import IMG_1217 from '../images/IMG_1217.JPG';
 

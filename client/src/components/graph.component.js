@@ -208,7 +208,7 @@ const Graph = (props) => {
  * Values of state properties are dictated by the recorded statistic for that state, on that date
  */
 function convertDataset(data, statistic) {
-
+    
     let dateKeyedMap = {};
     data.forEach(entry => {
         /* Group entries by date */
@@ -223,7 +223,6 @@ function convertDataset(data, statistic) {
         return a.date < b.date ? -1 : (a.date === b.date ? 0 : 1);
     });
     return sortedData;
-
 }
 
 /** 
@@ -297,49 +296,50 @@ function StateToStatistic(data, stat) {
 
 // Add state statistics with same date together
 // eslint-disable-next-line
-function convertDatasetTwo(data, statistic) {
-    let compressed = [];
-    let newPayl = [];
-    let n = 0;
-    let j = 0;
+// function convertDatasetTwo(data, statistic) {
+//     let compressed = [];
+//     let newPayl = [];
+//     let n = 0;
+//     let j = 0;
 
-    // Iterate over each object to change data key
-    for (let i = 0; i < data.length; ++i) {
-        newPayl.push(StateToStatistic(data[i], statistic))
-    }
-    // console.log('newPayl after stateToStat', newPayl)
+//     // Iterate over each object to change data key
+//     for (let i = 0; i < data.length; ++i) {
+//         newPayl.push(StateToStatistic(data[i], statistic))
+//     }
+//     // console.log('newPayl after stateToStat', newPayl)
 
-    n = newPayl.length;
+//     n = newPayl.length;
 
-    if (n === 1) {                                                  // case 0: Extra case with only one object
-        return newPayl;
-    }
+//     if (n === 1) {                                                  // case 0: Extra case with only one object
+//         return newPayl;
+//     }
 
-    // Iterate over objects in dataset
-    for (let i = 0; i < n; ++i) {
-        if ((j += 1) < n) {
-            if (i === 0 && (n === 2)) {                                // Case 1: with 2 objects only
-                return compressed = combineObjs(newPayl[i], newPayl[j])
-            } else if (i === 0 && (n > 2)) {                           // Case 2A: with more than 2 objects, starting point
-                compressed = combineObjs(newPayl[i], newPayl[j])
-            } else {                                                   // Case 2B: use temp to compare to previous merge
-                compressed = combineObjs(compressed, newPayl[j])
-            }
-        }
-    }
-    return compressed                                              // Final compressed dataset ready to be graph
-}
+//     // Iterate over objects in dataset
+//     for (let i = 0; i < n; ++i) {
+//         if ((j += 1) < n) {
+//             if (i === 0 && (n === 2)) {                                // Case 1: with 2 objects only
+//                 return compressed = combineObjs(newPayl[i], newPayl[j])
+//             } else if (i === 0 && (n > 2)) {                           // Case 2A: with more than 2 objects, starting point
+//                 compressed = combineObjs(newPayl[i], newPayl[j])
+//             } else {                                                   // Case 2B: use temp to compare to previous merge
+//                 compressed = combineObjs(compressed, newPayl[j])
+//             }
+//         }
+//     }
+//     return compressed                                              // Final compressed dataset ready to be graph
+// }
+// convertDatasetTwo();
 
-// Helper function to merge data
-// eslint-disable-next-line
-function combineObjs(objA, objB) {
-    let combined = []
-    objA.forEach(x => {
-        objB.forEach(y => {
-            if (x.date === y.date) {                                   // Check date, if match merge
-                combined.push({ ...x, ...y })
-            }
-        })
-    })
-    return combined
-}
+// // Helper function to merge data
+// // eslint-disable-next-line
+// function combineObjs(objA, objB) {
+//     let combined = []
+//     objA.forEach(x => {
+//         objB.forEach(y => {
+//             if (x.date === y.date) {                                   // Check date, if match merge
+//                 combined.push({ ...x, ...y })
+//             }
+//         })
+//     })
+//     return combined
+// }

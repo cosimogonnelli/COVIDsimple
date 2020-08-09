@@ -6,8 +6,6 @@ import RatingDropDownButton from './rating.component';
 import PaginationTool from './table-pagination.component';
 import SortRatedButton from './sort-rated.component';
 
-
-
 const RatedTable = ({ articles }) => {
     const [currentPage, setPage] = useState(0);
     const pageSize=10;

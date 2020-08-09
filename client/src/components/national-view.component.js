@@ -5,8 +5,6 @@ import ReactTooltip from "react-tooltip";
 
 import USGraph from "./usgraph.component.js";
 
-import "../App.css";
-
 // "enum" for allowed graph modes
 export const Modes = {
     AGG: "Aggregate",

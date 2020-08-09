@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import '../App.css';
 
 /* used to rate articles in news */
 
