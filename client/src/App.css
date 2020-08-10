@@ -613,6 +613,9 @@ p.card-text {
     .jump-link:hover, .jump-link:active, .jump-link:focus {
         border: none;
     }
+    .covid-image {
+        width: 80%;
+    }
 }
 
 /* bootstrap-sm */
@@ -631,6 +634,12 @@ p.card-text {
 
     .date-side {
         display: none;
+    }
+    .card-deck {
+        margin: 0px -20px 25px;
+    }
+    .card-deck > .card.about-card {
+        margin: 0px;
     }
 }
 
