@@ -22,7 +22,7 @@ export default class About extends Component {
                     </div>
                 </div>
                 <div className='card-deck'>
-                    <div className="card cardSet1">
+                    <div className="card cardSet1 about-card">
                         <div className="card-body">
                             <div className="inner">
                                 <img src="https://avatars1.githubusercontent.com/u/21066381?s=400&u=f459405e8ac019e30cfa764d72c4cc432eacd0ce&v=4"
@@ -44,7 +44,7 @@ export default class About extends Component {
                             </a>
                         </div>
                     </div>
-                    <div className="card cardSet2 ">
+                    <div className="card cardSet2 about-card">
                         <div className="card-body">
                             <div className="inner">
                                 <img src="https://avatars3.githubusercontent.com/u/27927826?s=460&u=cdc6fbdf407938cd1c23d940cf15a999fbc30491&v=4" alt="developer"></img>
@@ -60,7 +60,7 @@ export default class About extends Component {
                             </a>
                         </div>
                     </div>
-                    <div className="card cardSet3 ">
+                    <div className="card cardSet3 about-card">
                         <div className="card-body">
                             <div className="inner">
                                 <img src={IMG_1217} alt="developer's dog"></img>
