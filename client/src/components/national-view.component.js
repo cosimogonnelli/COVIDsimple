@@ -152,8 +152,11 @@ export default class NationalView extends Component {
                                     className="date-bottom"
                                     for="select-date-bottom"
                                 >
-                                    Select Date:
+                                    Select Date: 
                                 </Label>
+                                <span className="date-display date-bottom"> 
+                                    &nbsp;{this.state.date.toLocaleDateString()}
+                                </span>
                                 <FormGroup
                                     className="date-bottom"
                                     id="select-date-bottom"
@@ -161,7 +164,7 @@ export default class NationalView extends Component {
                                     <Row>
                                         <Col xs="12">
                                             <Slider /* x value encodes the day since DAY0 */
-                                                className ="slider slider-x"
+                                                className ="slider slider-x ml-4"
                                                 axis="x"
                                                 xmin={0}
                                                 xmax={SPAN}
@@ -182,22 +185,16 @@ export default class NationalView extends Component {
                                                         width: 25,
                                                     },
                                                     track: {
-                                                        width: this.state.dimensions.x * .9
+                                                        width: this.state.dimensions.x * .8
                                                     }
                                                 }}
                                             />
-                                        </Col>
-                                        <Col
-                                            xs="12"
-                                            className="align-self-center"
-                                        >
-                                            {this.state.date.toLocaleDateString()}
                                         </Col>
                                     </Row>
                                 </FormGroup>
                                 <FormGroup className="select-mode">
                                     <Label for="select-mode">
-                                        Select Data Mode:
+                                        Data Mode:
                                     </Label>
                                     <Input
                                         type="select"
@@ -231,7 +228,7 @@ export default class NationalView extends Component {
                                 </FormGroup>
                                 <br />
                                 <Label for="select-statistic">
-                                    Select Statistic:
+                                    Statistic:
                                 </Label>
                                 <FormGroup id="select-statistic" check>
                                     <Label check>
@@ -310,7 +307,9 @@ export default class NationalView extends Component {
                                             md="5"
                                             className="align-self-center"
                                         >
-                                            {this.state.date.toLocaleDateString()}
+                                            <span className="date-display">
+                                                {this.state.date.toLocaleDateString()}
+                                            </span>
                                         </Col>
                                     </Row>
                                 </FormGroup>
