@@ -15,11 +15,11 @@ const stateToPop = require("../geodata/state_pops.json"); // map from state abbr
 const USGraph = (props) => {
     /* dynamically resize graph on window resize */
     const [graphHeight, setGraphHeight] = useState(
-        window.innerWidth <= 768 ? "auto" : "80vh"
+        window.innerWidth < 768 ? "auto" : "80vh"
     );
 
     function handleResize() {
-        setGraphHeight(window.innerWidth <= 768 ? "auto" : "80vh");
+        setGraphHeight(window.innerWidth < 768 ? "auto" : "80vh");
     }
 
     useEffect(() => {
@@ -74,7 +74,7 @@ const USGraph = (props) => {
                 </h2>
             </>
         );
-        // otherwise graph by user selection:
+    // otherwise graph by user selection:
     } else {
         // set color scale based on data available to graph
         const colorDomain = Object.values(data)
@@ -88,7 +88,7 @@ const USGraph = (props) => {
         const colorScale = d3.scaleSequentialQuantile(colorDomain, colorRange);
 
         /* create an analogous discrete scale for the legend */
-        const legendRange = d3.quantize(d3.interpolateBlues, 8);
+        const legendRange = d3.quantize(d3.interpolateBlues, 8); // interpolate to 8 'quantiles'
         const legendScale = d3
             .scaleQuantile()
             .domain(colorDomain)
@@ -104,9 +104,9 @@ const USGraph = (props) => {
         //.attr("transform", "translate(0,0)");
 
         const legendSequential = legendColor()
-            .labelFormat(d3.format(".2s"))
+            .labelFormat(d3.format(".2s")) // 2 sig fig scientific notation
             .labelWrap(98)
-            .shapeWidth(98.5)
+            .shapeWidth(98.5)              // fit 8 labels into default svg width of 800 (of react-simple-maps)
             .orient("horizontal")
             .scale(legendScale);
         // .title(radioSelected)
@@ -247,7 +247,7 @@ function formatNumber(n) {
 }
 
 /**
- * Strip the 'Increasing' modifier from the passed statistic
+ * Strip the 'Increasing' modifier from the passed statistic:
  *  A necessary evil to handle statistic not-available checks when API
  *  incorrectly reports hospitalizedIncreased as 0 for states with no
  *  hospitalized data available (meaning Increased should be null)
